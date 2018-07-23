@@ -40,13 +40,14 @@
     </div>
 
         
-        <script src="script.js"></script>
+        
         <script src="jquery-3.3.1.js"></script>
+        <script src="script.js"></script>
         <script type="text/babel">
 
             var SearchSectionLocation = document.getElementById("ReactAppContainer");
             var SearchSection = React.createClass({
-                render: function(){
+                render: function() {
                     var buttonStyle = {
                         width: "auto",
                         height: 40,
@@ -63,9 +64,14 @@
                     };
                     var searchBarStyle = {
                         marginTop: 20,
-                        borderRadius: 10,
+                        border: "none",
                         padding: 5,
-                        width: "50%"
+                        width: "40%",
+                        height: 25,
+                        fontSize: 20
+                    };
+                    var magnifyIconStyle = {
+                        width: 30
                     };
                     return(
                         <form>
@@ -74,7 +80,10 @@
                             <a href="#"><button style={buttonStyle}>Sell</button></a>
                             <a href="#"><button style={buttonStyle}>Estimate</button></a><br/>
                            <input style={searchBarStyle} type="text" placeholder="Enter an address,
-                            neighborhood,city or ZIP code"></input> 
+                            neighborhood,city or ZIP code"></input><button type="submit" id="searchButton" value="search">
+                                <img style={magnifyIconStyle} src="photos/magnifyIcon.png"/>    
+                            </button> 
+                            
                         </form>
                     );
                 }

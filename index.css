@@ -36,7 +36,7 @@ body {
 #bannerSection {
     width: 80%;
     text-align: center;
-    height: 300px;
+    height: 320px;
     margin: auto;
     border: 1px dotted black;
     background-image: url("photos/banner.jpg");
@@ -53,9 +53,17 @@ body {
     text-align: center;
     padding-top: 10px;
     text-shadow: 1px 15px 30px black;
+    width: 60%;
 }
 #bannerSection button:hover {
     opacity: 0.5;
+}
+form #searchButton {
+    height: 35px;
+    width: 5%;
+    margin-bottom: -11px;
+    padding: 1px;
+    border: none;
 }
 
 
