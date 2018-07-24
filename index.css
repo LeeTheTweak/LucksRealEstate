@@ -11,6 +11,7 @@ body {
     background-color: #247a8a;
     padding: 1px;
     overflow: auto;
+    width: auto;
     box-shadow: 1px 1px 20px black;
 }
 #header li {
@@ -29,16 +30,48 @@ body {
     float: right;
     padding-right: 5px;
 }
+label {
+  clear: right;
+  margin: 0 40px 0 0;
+  font-size: 26px;
+  line-height: 70px;
+  display: none;
+  float: right;
+  width: 26px;
+}
+#toggle {
+  display: none;
+}
+
+@media only screen and (max-width: 500px) {
+  label {
+    display: block;
+    cursor: pointer;
+  }
+  .navMenu {
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+  .navMenu li {
+    display: block;
+    border-bottom: 1px solid #EAEAEB;
+    margin: 0;
+  }
+  #toggle:checked + .navMenu {
+    display: block;
+  }
+}
 /***********End of Header*************/
 #content {
     width: auto;
+    height: auto;
 }
-#bannerSection {
-    width: 80%;
+#bannerSectionContainer {
+    width: auto;
     text-align: center;
-    height: 320px;
-    margin: auto;
-    border: 1px dotted black;
+    height: auto;
+    padding: 50px;
     background-image: url("photos/banner.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -58,12 +91,23 @@ body {
 #bannerSection button:hover {
     opacity: 0.5;
 }
-form #searchButton {
-    height: 35px;
-    width: 5%;
-    margin-bottom: -11px;
-    padding: 1px;
-    border: none;
+#noticeSectionContainer {
+  width: auto;
+  height: auto;
+  padding: 5px;
+  margin: 0;
+  background-color: #07488b;
 }
+#noticeSectionContainer ul {
 
-
+}
+#noticeSectionContainer li {
+  list-style-type: none;
+  display: inline-block;
+}
+#noticeSection p {
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: white;
+}

@@ -5,14 +5,21 @@
         <meta name="viewport" content="width=width-device, initial=scale-1"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <title>Luck's Real Estate</title>
-        <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
-        <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+        <script src="https://fb.me/react-15.0.0.js"></script>
+        <script src="https://fb.me/react-dom-15.0.0.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
         <link href="index.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
+      <!-- The Main Container of the Document -->
         <div id="mainContainer">
-        <div id="header">
+        <div id="header">         <!-- The Header -->
+          <!-- The Nav Section -->
+          <div class="nav">
+            <label for="toggle" style="color:white;">&#9776;</label>
+            <input type="checkbox" id="toggle"/>
+          <div class="navMenu">
+
             <ul>
                 <li><a href="index.html"style="text-decoration:underline;">Buy</a></li>
                 <li><a href="#">Rent</a></li>
@@ -27,25 +34,41 @@
                 <li><a href="#">Sign in</a><b> or </b> <a href="#">Join</a></li>
             </div>
             </ul>
+            
+          </div>
+          </div>
         </div>
+        <!-- The Content Section (The Banner and Notice Section are considered here)-->
         <div id="content">
-            <div id="bannerSection">
+            <div id="bannerSectionContainer">
+              <div id="bannerSection">
                 <p id="tagLine">Find your dream home</p>
-                    
-                    <div id="ReactAppContainer">
-                        
-                    </div>
+                <!-- The React Search Section App -->
+                    <div id="ReactAppContainer"></div>
+              </div>
+            </div>
+            <div id="noticeSectionContainer">
+              <ul>
+                <li>
+                  <div id="noticeSection">
+                  <p>Get pre-qualified by a local lender on Luck's.</p>
+                </li>
+              </ul>
             </div>
         </div>
+        <!-- The Most Recent Build Homes React App -->
+        <div id="MostRecentBuildApp"></div>
     </div>
 
-        
-        
-        <script src="jquery-3.3.1.js"></script>
-        <script src="script.js"></script>
+
+        <script src="jquery-3.3.1.js"></script> <!-- Including JQuery-->
+        <script src="script.js"></script>       <!-- Including the JavaScript File -->
+
         <script type="text/babel">
 
             var SearchSectionLocation = document.getElementById("ReactAppContainer");
+            var MostRecentBuildSection = document.getElementById("MostRecentBuildApp");
+
             var SearchSection = React.createClass({
                 render: function() {
                     var buttonStyle = {
@@ -70,20 +93,14 @@
                         height: 25,
                         fontSize: 20
                     };
-                    var magnifyIconStyle = {
-                        width: 30
-                    };
                     return(
-                        <form>
+                        <form id="form">
                             <a href="#"><button style={buttonStyle}>Buy</button></a>
                             <a href="#"><button style={buttonStyle}>Rent</button></a>
                             <a href="#"><button style={buttonStyle}>Sell</button></a>
                             <a href="#"><button style={buttonStyle}>Estimate</button></a><br/>
-                           <input style={searchBarStyle} type="text" placeholder="Enter an address,
-                            neighborhood,city or ZIP code"></input><button type="submit" id="searchButton" value="search">
-                                <img style={magnifyIconStyle} src="photos/magnifyIcon.png"/>    
-                            </button> 
-                            
+                           <input id="search_bar"style={searchBarStyle} type="text" placeholder="Enter an address,
+                            neighborhood,city or ZIP code"></input>
                         </form>
                     );
                 }
@@ -93,6 +110,12 @@
                     <SearchSection/>
                 </div>,
                 SearchSectionLocation
+            );
+            ReactDOM.render(
+              <div>
+                <h1>Test</h1>
+              </div>,
+              MostRecentBuildSection
             );
         </script>
     </body>
