@@ -43,7 +43,7 @@ label {
   display: none;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 400px) {
   label {
     display: block;
     cursor: pointer;
